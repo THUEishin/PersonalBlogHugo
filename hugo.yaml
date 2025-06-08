@@ -1,0 +1,81 @@
+baseURL: https://thueishin.github.io/
+languageCode: en-us
+defaultContentLanguage: "en"
+pagination:
+  pagerSize: 10
+title: Ruichen Ni's Blog
+theme: ananke
+
+# Enable Disqus for comments
+services:
+  disqus:
+    shortname: thueishin
+
+params:
+  author: "Ruichen Ni"
+  description: "A personal profile for Ruichen Ni (倪锐晨), a PhD graduate from Aerospace School of Tsinghua University and majors in computational mechanics."
+  favicon: "favicons/favicon.ico"
+  # Optional: social links
+  social:
+    - name: github
+      url: "https://github.com/THUEishin"
+    - name: researchgate
+      url: "https://www.researchgate.net/profile/Ruichen-Ni-5"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 2
+    - identifier: archive
+      name: Archive
+      url: /post/
+      weight: 3
+    - identifier: gallery
+      name: Gallery
+      url: /gallery/
+      weight: 4
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 5
+
+taxonomies:
+  tag: tags
+  category: categories
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+permalinks:
+  posts: /:year/:month/:title/
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allow raw HTML in Markdown
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4
+
+caches:
+  images:
+    dir: :cacheDir/images

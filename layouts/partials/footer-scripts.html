@@ -1,0 +1,2 @@
+{{ $copy := resources.Get "js/copy-code.js" | minify | fingerprint }}
+<script src="{{ $copy.RelPermalink }}" integrity="{{ $copy.Data.Integrity }}" defer></script>

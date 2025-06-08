@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main class="mw8 center ph3">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Content }}</p>
+
+  {{ range .Pages.ByTitle }}
+    <section class="mb5">
+      <h2>{{ .Title }}</h2>
+      <div class=".lightbox-gallery-left">
+        {{ range .Resources.Match "*.jpg" }}
+          <a href="{{ .RelPermalink }}" data-lightbox="{{ $.Title }}" data-title="{{ .Name }}">
+            <img src="{{ .RelPermalink }}" alt="{{ .Name }}" class="gallery-collection" loading="lazy">
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+</main>
+{{ end }}

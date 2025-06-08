@@ -1,0 +1,23 @@
+
+
+{
+  "name": "Ruichen Ni",
+  "short_name": "Ruichen Ni",
+  "description": "A personal profile for Ruichen Ni (倪锐晨), a PhD graduate from Aerospace School of Tsinghua University and majors in computational mechanics.",
+  "icons": [
+    {
+      "src": "/assets/img/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "/index.html",
+  "theme_color": "#2a1e6b",
+  "background_color": "#ffffff",
+  "display": "fullscreen"
+}
+

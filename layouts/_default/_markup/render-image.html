@@ -1,0 +1,39 @@
+{{- $alt := .Text -}}
+{{- $src := .Destination | safeURL -}}
+{{- $title := .Title | default "" -}}
+
+{{/* Defaults */}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- $align := "center" -}}
+
+{{- $titleParts := split $title " " -}}
+{{- range $titleParts }}
+  {{- if findRE `^\d+x\d+$` . }}
+    {{- $sizeParts := split . "x" -}}
+    {{- $width = index $sizeParts 0 -}}
+    {{- $height = index $sizeParts 1 -}}
+  {{- else if eq . "left" }}{{ $align = "left" }}
+  {{- else if eq . "right" }}{{ $align = "right" }}
+  {{- else if eq . "center" }}{{ $align = "center" }}
+  {{- end }}
+{{- end }}
+
+{{/* Try to load image from assets for processing */}}
+{{- $imgRes := .Page.Resources.GetMatch $src }}
+{{- if not $imgRes }}
+  {{- $imgRes = resources.GetMatch (printf "**%s" $src) }}
+{{- end }}
+
+{{- $resized := $imgRes -}}
+{{- if and $imgRes (and $width $height) }}
+  {{- $resized = $imgRes.Fit (printf "%sx%s" $width $height) }}
+{{- end }}
+
+<figure align="{{ $align }}">
+  <img 
+    src="{{ if $resized }}{{ $resized.RelPermalink }}{{ else }}{{ $src }}{{ end }}"
+    alt="{{ $alt | safeHTMLAttr }}"
+    {{ with $width }} width="{{ . }}"{{ end }}
+    {{ with $height }} height="{{ . }}"{{ end }} />
+</figure>
