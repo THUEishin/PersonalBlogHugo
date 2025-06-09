@@ -24,3 +24,5 @@ tags: ["Gallery"]
     <div class="gallery-caption">Marriage Certificate</div>
   </div>
 </div>
+
+<a href="/gallery/" style="font-size:16px;">[More Picture]</a>
