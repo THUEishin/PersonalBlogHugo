@@ -2,7 +2,7 @@ baseURL: https://thueishin.github.io/
 languageCode: en-us
 defaultContentLanguage: "en"
 pagination:
-  pagerSize: 10
+  pagerSize: 6
 title: Ruichen Ni's Blog
 theme: ananke
 
