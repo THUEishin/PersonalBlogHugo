@@ -1,7 +1,7 @@
 ---
 title: '基于YOLO LITE的人脸口罩检测'
 summary: 模式识别课程的期末大作业，对图片内的人脸进行检测定位，并判断是否佩戴口罩。在个人电脑上对YOLO-LITE模型从随机初始化开始训练，最终得到的模型性能结果为mAP@.5约为15%，CPU推断速度为29FPS。
-date: '2025-06-06T17:09:35+08:00'
+date: '2020-06-29T17:09:35+08:00'
 draft: false
 author: ["Ruichen Ni"]
 tags: ["Pattern Recognition"]
